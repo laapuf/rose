@@ -1,0 +1,91 @@
+
+body, html {
+  background: radial-gradient(circle at center, #000015,  #090613, #131217, #131217);
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  font-family: "Tinos", serif;
+}
+
+#globe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  border-radius: 0;
+  width: 20px;
+  height: 20px; 
+  background-color: #000014;
+  border-color: whitesmoke;
+  color: whitesmoke;
+  position: absolute;
+  font-size: xx-small;
+}
+
+#screen {
+  width: 56px;
+  height: 16px;
+  background-color: #101010;
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+  position: absolute;
+  font-size: xx-small;
+  bottom: 90px;
+  right: 10px;
+}
+
+#message {
+  color: white;
+  position: absolute;
+  bottom: 120px;
+  right: 10px;
+  font-size: xx-small;
+}
+
+#secret {
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  font-size: small;
+}
+
+#pin1 { bottom: 30px; right: 50px; }
+#pin2 { bottom: 30px; right: 30px; }
+#pin3 { bottom: 30px; right: 10px; }
+#pin4 { bottom: 50px; right: 50px; }
+#pin5 { bottom: 50px; right: 30px; }
+#pin6 { bottom: 50px; right: 10px; }
+#pin7 { bottom: 70px; right: 50px; }
+#pin8 { bottom: 70px; right: 30px; }
+#pin9 { bottom: 70px; right: 10px; }
+#pin0 { bottom: 10px; right: 50px; }
+#pinEnter { bottom: 10px; right: 10px; width: 40px; }
+
+
+
+.sky {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
