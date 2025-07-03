@@ -1,10 +1,9 @@
-import '../public/styles/styles.css'; // ✅ path to your CSS
-import '../public/script.js'; // optional, if using external JS
-import Head from 'next/head';
+import Head from "next/head";
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   async function login(event) {
     event.preventDefault();

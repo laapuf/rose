@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState } from "react";
 
 export default function Home() {
@@ -14,23 +15,23 @@ export default function Home() {
       });
       const data = await res.json();
       if (res.ok && data.success) {
-        alert("Login successful!");
-        // redirect or other logic here
+        alert("yes");
+        localStorage.setItem("loggedIn", "true");
+        window.location.href = "/secret.html";
       } else {
-        alert(data.message || "Login failed");
+        alert(data.message || "no");
       }
     } catch (err) {
-      alert("Error connecting to server");
+      alert("uhuh");
     }
   }
 
   return (
     <>
-      <head>
+      <Head>
         <title>~</title>
         <link rel="icon" href="/moon.gif" type="image/gif" />
-        {/* Note: styles are imported globally in _app.js */}
-      </head>
+      </Head>
 
       <div className="sky" id="sky"></div>
 
