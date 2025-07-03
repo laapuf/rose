@@ -8,28 +8,29 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+
+<!--<p id="message"></p> incorrectpass message placeholder-->  
   <div class="sky" id="sky"></div>
   <div id="globe">
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif" style="width: 75px; height: 75px;">
   </div>
 
-  <button onclick="pin(1)" class="button" id="pin1">1</button>
-  <button onclick="pin(2)" class="button" id="pin2">2</button>
-  <button onclick="pin(3)" class="button" id="pin3">3</button>
-  <button onclick="pin(4)" class="button" id="pin4">4</button>
-  <button onclick="pin(5)" class="button" id="pin5">5</button>
-  <button onclick="pin(6)" class="button" id="pin6">6</button>
-  <button onclick="pin(7)" class="button" id="pin7">7</button>
-  <button onclick="pin(8)" class="button" id="pin8">8</button>
-  <button onclick="pin(9)" class="button" id="pin9">9</button>
-  <button onclick="pin(0)" class="button" id="pin0">0</button>
-  <button onclick="entered()" class="button" id="pinEnter">enter</button>
 
-  <div id="screen"></div>
-  <div id="message"></div>
-  <div id="secret"></div>
+<div id="login" class="left">
+  <form onsubmit="login(event)">
+    <input type="text"    id="username" placeholder="user" required />
+    <input type="password" id="password" placeholder="pass" required />
+    <button type="submit">◄</button>
+  </form>
+</div>
   
+
   <script src="script.js"></script>
+
+
+
+<footer class="footer">© 2025 david. i have no rights.</footer>
 </body>
 </html>
 

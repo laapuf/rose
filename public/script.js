@@ -1,54 +1,30 @@
-let pinNumber = "";
+async function login(evt) {
+  evt.preventDefault();
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
 
-function pin(number) {
-  if (pinNumber.length >= 4) {
-    pinNumber = String(number);
-  } else {
-    pinNumber += String(number);
-  }
-  document.getElementById("screen").textContent = pinNumber;
-}
-
-async function entered() {
-  const res = await fetch("/login", {
+  const res = await fetch("/api/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ pin: pinNumber }),
+    body: JSON.stringify({ username, password }),
   });
 
   const data = await res.json();
-  if (data.success) {
-    loadSecret();
+  const msgEl = document.getElementById("message");
+
+  if (res.ok && data.success) {
+    // mark logged-in
+    localStorage.setItem("loggedIn", "true");
+    // redirect to protected page
+    window.location.href = "/secret.html";
   } else {
-    document.getElementById("message").textContent = data.message || "Login failed";
-  }
-
-  pinNumber = "";
-  document.getElementById("screen").textContent = "";
-}
-
-async function loadSecret() {
-  const res = await fetch("/secret");
-  const data = await res.json();
-  const secret = document.getElementById("secret");
-
-  if (data.success) {
-    secret.innerHTML = data.html;
-  } else {
-    secret.innerHTML = "<p>Access denied.</p>";
+    msgEl.textContent = data.message || "Login failed";
   }
 }
-
-async function logout() {
-  await fetch("/logout");
-  document.getElementById("secret").innerHTML = "";
-  document.getElementById("message").textContent = "Logged out.";
-}
-
 
 
 const sky = document.getElementById('sky');
-const numStars = 300;
+const numStars = 200;
 
 for (let i = 0; i < numStars; i++) {
   const star = document.createElement('div');
