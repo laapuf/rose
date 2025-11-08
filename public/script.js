@@ -24,7 +24,7 @@ async function login(evt) {
 
 
 const sky = document.getElementById('sky');
-const numStars = 200;
+const numStars = 100;
 
 for (let i = 0; i < numStars; i++) {
   const star = document.createElement('div');
